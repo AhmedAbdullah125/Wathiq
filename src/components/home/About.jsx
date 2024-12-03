@@ -48,7 +48,6 @@ export default function About() {
                                 }}
                                 viewport={{ once: true }} 
                                 className="option" key={item.text}
-                                key={index}
                                 >
                                 <div className="img-cont">
                                     <Image src={item.img} width={200} height={200} alt="Mazar"></Image>
