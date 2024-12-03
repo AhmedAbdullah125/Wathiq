@@ -1,0 +1,109 @@
+.parteners{
+    padding: 100px 0;
+    background-color: #E0F5F5;
+    .parts-cont{
+        text-align: center;
+        margin-bottom: 56px;
+        h3{
+            font-size: 40px;
+            font-weight: 700;
+            color: #21201F;
+            margin-bottom: 48px;
+        }
+        .partss{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 78px;
+            .part{
+                width: 100px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    .nums{
+        text-align: center;
+        h3{
+            font-size: 32px;
+            font-weight: 700;
+            color: #21201F;
+            margin-bottom: 32px;
+        }
+        .numbers-cont{
+            display: grid;
+            align-items: flex-start;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 27px;
+            .number{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 20px;
+                border-radius: 13px;
+                height: 100%;
+                h2{
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: $main;
+                    margin-bottom: 15px;
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: 7400;
+                    color: #7B7A79;
+                    margin-bottom: 0;
+                }
+                span{
+                    font-size: 56px;
+                    font-weight: 700;
+                    color: #3C3C3C;
+                    margin-bottom: 0;
+                }
+                .needed{
+                    display: flex;
+                    align-items: center;
+                    font-size: 56px;
+                    font-weight: 700;
+                    color: $main;
+                    gap: 8px;
+                    margin-bottom: 0;
+                }
+            }
+            .number:hover{
+                border: 1px solid $main;
+                box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+@media (max-width: 1025px) {
+    .parteners .nums .numbers-cont{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .parteners {
+        .parts-cont {
+            margin-bottom: 60px;
+            h3{
+                font-size: 32px;
+            }
+            .partss{
+                gap: 24px;
+                flex-direction: column;
+            }
+        }
+    }
+    .parteners .nums .numbers-cont{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
