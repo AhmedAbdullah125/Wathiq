@@ -17,7 +17,7 @@ export default function Home() {
       <KnowAbout/>
       <Brief/>
       <Discount/>
-      <News/>
+      {/* <News/> */}
     </main>
   );
 }

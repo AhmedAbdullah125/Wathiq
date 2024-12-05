@@ -108,6 +108,7 @@ header {
     .side-menu-active {
         opacity: 1;
         visibility: visible;
+        z-index: 103;
     }
 }
 

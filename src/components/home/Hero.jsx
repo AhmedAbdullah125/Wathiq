@@ -16,8 +16,8 @@ export default function Hero() {
                     <h1>كن واثقا مع واثق </h1>
                     <p>راقب نقل المنتجات البترولية واضمن  وصولها بنفس الجودة والكمية</p>
                     <div className="links">
-                        <Link href="#" className='main-link' >اطلب نسختك التجريبيه </Link>
-                        <Link href="#" className='sec-link' >جرب النظام مجانا</Link>
+                        <Link href="/login" className='main-link' >اطلب نسختك التجريبيه </Link>
+                        <Link href="/book" className='sec-link' >جرب النظام مجانا</Link>
                     </div>
                 </div>
                 <motion.div

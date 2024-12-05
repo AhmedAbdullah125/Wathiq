@@ -8,10 +8,10 @@ footer {
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 60px;
+        margin-bottom: 16px;
 
         .logo {
-            width: 186px;
-            aspect-ratio: 186/262;
+            width: 300px;
 
             img {
                 width: 100%;
@@ -58,6 +58,9 @@ footer {
                     font-size: 33px;
                     color: $white;
                 }
+                i:hover{
+                    color: $main;
+                }
 
             }
 
@@ -71,6 +74,13 @@ footer {
 
             }
         }
+    }
+    .served{
+        padding: 20px 0;
+        color: #5D6873;
+        border-top: 1px solid #5D6873;
+        font-size: 16px;
+        font-weight: 500;
     }
 }
 

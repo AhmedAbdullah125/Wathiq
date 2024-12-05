@@ -24,7 +24,7 @@ export default function News() { // Defining the main functional component named
                                             <p>{item.p}</p>
                                         </div>
                                         <div className="arrow">
-                                            <i classNAme="fa-solid fa-chevron-left"></i>
+                                            <i className="fa-solid fa-chevron-left"></i>
                                         </div>
                                     </div>
                                 </div>

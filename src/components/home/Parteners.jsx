@@ -2,18 +2,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import part1 from '/public/part1.svg';
-import part2 from '/public/part2.svg';
-import part3 from '/public/part3.svg';
+import part1 from '/public/1.png';
+import part2 from '/public/2.png';
+import part3 from '/public/3.png';
+import part4 from '/public/4.png';
+import part5 from '/public/5.png';
+import part6 from '/public/6.png';
+import part7 from '/public/7.png';
 import NumberTicker from '../ui/number-ticker';
 
 export default function Parteners() {
-    let parts = [part1, part2, part3];
+    let parts = [part1, part2, part3, part4, part5, part6, part7];
     let numbers = [
         { name: "وفرنا", number: 500000, p: "ريال سعودي لكل عميل في منتج واحد" },
         { name: "أنجزنا", number: 12000, p: "رحله عبر النظام" },
         { name: "نقلنا", number: 430, p: "مليون لتر" },
-        { name: "أستخدمنا", number: 40000, p: "قفلا مخصصا" },
+        { name: "استخدمنا", number: 40000, p: "قفلا مخصصا" },
     ]
     return (
         <div className="parteners" >
@@ -32,7 +36,7 @@ export default function Parteners() {
 
                 </div>
                 <div className="nums">
-                    <h3>ارقام واثق</h3>
+                    <h3> أرقام واثق</h3>
                     <div className="numbers-cont">
                         {
                             numbers.map((item, index) =>
