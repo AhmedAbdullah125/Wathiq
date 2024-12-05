@@ -10,7 +10,7 @@ import logo from '/public/logo2.svg'
 export default function Footer() { // Defining the main functional component named 'Footer'.
 
     return (
-        <footer > {/* Main footer container with padding and background color */}
+        <footer id='footer'> {/* Main footer container with padding and background color */}
             <a href="https://wa.me/+966551314455?text=Good%20Morning%20Wathiq" className="fixed-what">
                 <i className="fa-brands fa-whatsapp"></i>
             </a>

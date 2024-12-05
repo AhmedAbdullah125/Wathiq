@@ -114,7 +114,7 @@ export default function FormPage(props) {
 
             name: z.string().min(1, { message: "Name is required" }).max(50, { message: "Name must be at most 50 characters" }),
             phone: z.string().refine(validator.isMobilePhone, { message: "Invalid phone number" }),
-            comments: z.string().min(1, { message: "Commet is required" }).max(500, { message: "Comments must be at most 500 characters" }),
+            comments: z.string().max(500, { message: "Comments must be at most 500 characters" }),
             destniation: z.string().min(1, { message: "Destniation is required" }),
 
         })
@@ -335,7 +335,7 @@ export default function FormPage(props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <FormLabel>Arrive date (optional)</FormLabel>
+                                            <FormLabel>ملاحظات (اختياري)</FormLabel>
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

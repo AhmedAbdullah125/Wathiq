@@ -1361,7 +1361,7 @@ body {
   z-index: 2;
 }
 .book-main-page .book-cont .MazarInfo img {
-  width: 100%;
+  width: 70%;
   height: auto;
   margin-bottom: 30px;
 }
@@ -1518,6 +1518,7 @@ body {
   overflow: hidden;
   margin-top: 12px;
   margin-bottom: 16px;
+  max-width: 70px;
 }
 .PhoneInput .PhoneInputCountrySelect {
   width: 20px;
@@ -1526,6 +1527,11 @@ body {
   max-height: 100%;
   height: 55px;
   padding: 3px;
+  max-width: 50px;
+}
+.PhoneInput .PhoneInputCountryIcon input:focus-visible {
+  border: none;
+  outline: none;
 }
 .PhoneInput .PhoneInputCountryIcon img {
   height: 100%;
