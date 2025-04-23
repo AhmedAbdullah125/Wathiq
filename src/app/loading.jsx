@@ -8,12 +8,8 @@ export default function Loading() {
         //     <Image src={footerimg} alt='logo' className='loading-logo' />
         // </div>
         <div id="page">
-            <div id="container">
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="h3">loading</div>
+            <div id="container m-auto">
+               <Image src={footerimg} alt='logo' className='loading-logo  ' />
             </div>
         </div>
     )

@@ -17,7 +17,7 @@ export default function News() { // Defining the main functional component named
                         {
                             news.map((item, index) =>
                                 <div className="news" key={index}>
-                                    <Image src={item.img} alt="Mazar" width={200} height={200} />
+                                    <Image src={item.img} alt="Wathiq" width={200} height={200} />
                                     <div className="news-data">
                                         <div className="text">
                                             <h3>{item.title}</h3>
@@ -38,7 +38,7 @@ export default function News() { // Defining the main functional component named
                         {
                             news.map((item, index) =>
                                 <div className="news" key={index}>
-                                    <Image src={item.img} alt="Mazar" width={200} height={200} />
+                                    <Image src={item.img} alt="Wathiq" width={200} height={200} />
                                     <div className="news-data">
                                         <div className="text">
                                             <h3>{item.title}</h3>

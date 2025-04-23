@@ -50,7 +50,7 @@ export default function About() {
                                 className="option" key={item.text}
                                 >
                                 <div className="img-cont">
-                                    <Image src={item.img} width={200} height={200} alt="Mazar"></Image>
+                                    <Image src={item.img} width={200} height={200} alt="Wathiq"></Image>
                                 </div>
                                 <div className="text">
                                     <h2>{item.text}</h2>

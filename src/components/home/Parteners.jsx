@@ -2,22 +2,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import part1 from '/public/1.png';
-import part2 from '/public/2.png';
-import part3 from '/public/3.png';
-import part4 from '/public/4.png';
-import part5 from '/public/5.png';
-import part6 from '/public/6.png';
-import part7 from '/public/7.png';
+import part1 from '/public/customers/1.png';
+import part2 from '/public/customers/2.png';
+import part3 from '/public/customers/3.png';
+import part4 from '/public/customers/4.png';
+import part5 from '/public/customers/5.png';
+import part6 from '/public/customers/6.png';
+import part7 from '/public/customers/7.png';
+import part8 from '/public/customers/8.png';
+import part9 from '/public/customers/9.png';
+import part10 from '/public/customers/10.png';
 import NumberTicker from '../ui/number-ticker';
+import Marquee from '../ui/marquee';
+import { cn } from '@/lib/utils';
+// import { cn } from "@/lib/utils";
+// import Marquee from "@/components/magicui/marquee";
 
 export default function Parteners() {
-    let parts = [part1, part2, part3, part4, part5, part6, part7];
+
+    const ReviewCard = ({
+        img,
+    }) => {
+        return (
+            <figure
+                className={cn(
+
+                )}
+            >
+                <div className="part" >
+                    <Image src={img} alt="Wathiq" width={200} height={200} />
+                </div>
+            </figure>
+        );
+    };
+    let parts = [{ img: part1.src }, { img: part2 }, { img: part3 }, { img: part4 }, { img: part5 }, { img: part6 }, { img: part7 }, { img: part8 }, { img: part9 }, { img: part10 }];
     let numbers = [
-        { name: "وفرنا", number: 500000, p: "ريال سعودي لكل عميل في منتج واحد" },
-        { name: "أنجزنا", number: 12000, p: "رحله عبر النظام" },
-        { name: "نقلنا", number: 430, p: "مليون لتر" },
-        { name: "استخدمنا", number: 40000, p: "قفلا مخصصا" },
+        { name: "وفرنا", number: 500000, p: "ريال سعودي لعميل واحد في منتج واحد" },
+        { name: "أنجزنا", number: 17000, p: "رحله عبر النظام" },
+        { name: "نقلنا", number: 580, p: "مليون لتر" },
+        { name: "استخدمنا", number: 60000, p: "قفلا مخصصا" },
     ]
     return (
         <div className="parteners" >
@@ -25,13 +48,15 @@ export default function Parteners() {
                 <div className="parts-cont">
                     <h3>انضم لشركاء النجاح</h3>
                     <div className="partss">
-                        {
-                            parts.map((item, index) =>
-                                <div className="part" key={index}>
-                                    <Image src={item} alt="Mazar" width={200} height={200} />
-                                </div>
-                            )
-                        }
+                        <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg border ">
+                            <Marquee pauseOnHover className="[--duration:20s]">
+                                {parts.map((review, index) => (
+                                    <ReviewCard key={index} {...review} />
+                                ))}
+                            </Marquee>
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -53,7 +78,7 @@ export default function Parteners() {
                                     className="number" key={index}>
                                     <h2>{item.name}</h2>
                                     <div className="needed">
-                                    <NumberTicker value={item.number} /> +
+                                        <NumberTicker value={item.number} /> +
                                     </div>
                                     <p>{item.p}</p>
                                 </motion.div>

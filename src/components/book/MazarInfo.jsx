@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import logo from '../../assets/images/home/logo.svg';
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
@@ -16,7 +16,7 @@ export default function MazarInfo() {
         bounce: 0.2, // Small bounce effect for the animation
       }}
       className={`w-full MazarInfo`}>
-      <Image src={logo} alt="Mazar" className="img-logo" />
+      <Image src={logo} alt="Wathiq" className="img-logo" />
       <h2> تواصل الآن مع فريق مبيعات واثق</h2>
       <p> عرفنا أكثر عن مشروعك لمساعدتك </p>
     </motion.div>

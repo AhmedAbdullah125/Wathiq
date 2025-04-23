@@ -5,7 +5,11 @@ body {
 * {
     transition: all 0.3s ease-in-out;
 }
-
+.loading-logo{
+    height: 90vh;
+    margin: auto;
+    width: auto;
+}
 header {
     padding: 13px 0;
     box-shadow: 0px 0px 14px rgba(224, 245, 245, .15);

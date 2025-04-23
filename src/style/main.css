@@ -441,6 +441,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.loading-logo {
+  height: 90vh;
+  margin: auto;
+  width: auto;
+}
+
 header {
   padding: 13px 0;
   box-shadow: 0px 0px 14px rgba(224, 245, 245, 0.15);
@@ -1144,6 +1150,10 @@ header .side-menu-active {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.discount {
+  background-attachment: fixed;
+  background-position: center;
+}
 .discount .overlay {
   padding: 100px 0;
   background-color: rgba(33, 32, 31, 0.8);
@@ -1235,6 +1245,9 @@ footer .content {
 }
 footer .content .logo {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 footer .content .logo img {
   width: 100%;
@@ -1484,9 +1497,8 @@ body {
   gap: 30px;
   width: 100%;
 }
-.book-main-page .user .users .user-item {
+.book-main-page .user .user-item {
   background-color: #E0F5F5;
-  width: 100%;
   border-radius: 14px;
   padding: 25px;
   display: flex;
@@ -1494,40 +1506,53 @@ body {
   align-items: center;
   gap: 11px;
 }
-.book-main-page .user .users .user-item h3 {
+.book-main-page .user .user-item h3 {
   font-size: 24px;
   font-weight: 700;
   color: #444444;
 }
-.book-main-page .user .users .user-item img {
+.book-main-page .user .user-item img {
   width: 64px;
+}
+.book-main-page .user .user-item:hover {
+  background-color: var(--main-hover);
+}
+.book-main-page .user .user-item:hover h3 {
+  color: var(--white-color);
 }
 
 .PhoneInput {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 .PhoneInput .PhoneInputCountry {
   display: flex;
   height: 55px;
+  width: 105px;
   border-radius: 2px;
   border: 1px solid #e3e3e3;
   background-color: #F9F9F9;
   overflow: hidden;
   margin-top: 12px;
   margin-bottom: 16px;
-  max-width: 70px;
+  max-width: 110px;
 }
 .PhoneInput .PhoneInputCountrySelect {
-  width: 20px;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .PhoneInput .PhoneInputCountrySelect {
+    font-size: 12px;
+  }
 }
 .PhoneInput .PhoneInputCountryIcon {
   max-height: 100%;
   height: 55px;
   padding: 3px;
   max-width: 50px;
+  display: none;
 }
 .PhoneInput .PhoneInputCountryIcon input:focus-visible {
   border: none;
@@ -1542,8 +1567,13 @@ body {
 }
 
 .book-main-page .book-cont .form form .PhoneInputCountry {
-  width: 100px;
+  width: 106px;
   flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  .book-main-page .book-cont .form form .PhoneInputCountry {
+    width: 80px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1552,6 +1582,9 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .book-main-page .book-cont .form {
+    padding: 24px 12px;
+  }
   .book-main-page .user .users {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1915,6 +1948,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 0% 0%;
+     object-position: 0% 0%;
 }
 .about-page .values-i1 {
   position: absolute;

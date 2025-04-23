@@ -1,20 +1,29 @@
-import React from 'react';
+'use client'
+import React , { useEffect, useState } from 'react';
 import Image from 'next/image';
 import bg from '/public/saudi.jpg'
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 export default function Discount() { // Defining the main functional component named 'Footer'.
-
+    const searchParams = useSearchParams();
+    const [gclid, setGclid] = useState(null); // Store GCLID
+    useEffect(() => {
+        // Extract GCLID from the URL
+        const gclidValue = searchParams.get('gclid');
+        if (gclidValue) {
+            setGclid(gclidValue);
+        }
+    }, [searchParams]);
     return (
         <div className="discount" style={{ backgroundImage: `url(${bg.src})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
             <div className="overlay">
                 <div className="container m-auto">
                     <div className="relat">
                         <span className='abs-span'>خصم </span>
-                        <h2>سارع بأخذ خصم اليوم الوطني السعودي</h2>
-                        <p>لأننا نقدم حلاً متكاملاً وسلسًا يضمن الشفافية والأمان ويعمل بشكل مؤتمت وبدون تعقيد، على عكس الحلول التقليدية التي تتطلب جهدًا ووقتًا كبيرًا​</p>
+                        <h2>اشترك، واحصل على خصم 20% عرض نهاية السنة.</h2>
                         <div className="links">
-                            <Link href="#" className='yellow-btn order'>طلب النظام </Link>
-                            <Link href="#" className='yellow-btn tagr'>اطلب نسختك التجريبيه</Link>
+                            <Link href={`/book${gclid?`?gclid=${gclid}`:""}`} className='yellow-btn order'>طلب النظام </Link>
+                            {/* <Link href="https://wa.me/+966551314455?text=Good%20Morning%20Wathiq" className='yellow-btn tagr'>اطلب نسختك التجريبيه</Link> */}
                         </div>
                     </div>
                 </div>
