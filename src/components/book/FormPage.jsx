@@ -25,7 +25,6 @@ export default function FormPage() {
         }
 
     }, [searchParams]);
-    console.log(gclid);
     const sendPostRequest = async (data) => {
         const url = 'https://dev.wathiq.io/api/place-order';
         const queryParams = {
