@@ -1,14 +1,21 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React , { useEffect, useState } from 'react'; // Importing React to use JSX syntax and create components.
+import React , { Suspense, useEffect, useState } from 'react'; // Importing React to use JSX syntax and create components.
 import logo from '/public/logo2.svg'
 import SaudiTech from '../../../public/SaudiTech.png'
 import { useSearchParams } from 'next/navigation';
+import Loading from '@/app/loading';
 
+export default function Footer() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <FooterWrapper />
+        </Suspense>
+    );
+}
 
-
-export default function Footer() { // Defining the main functional component named 'Footer'.
+function FooterWrapper() { // Defining the main functional component named 'Footer'.
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID
     useEffect(() => {

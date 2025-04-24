@@ -1,9 +1,22 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import Loading from '@/app/loading';
+
+
 
 export default function KnowAbout() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <KnowAboutWrapper />
+        </Suspense>
+    );
+}
+
+
+
+function KnowAboutWrapper() {
 
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID

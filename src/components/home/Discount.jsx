@@ -1,10 +1,21 @@
 'use client'
-import React , { useEffect, useState } from 'react';
-import Image from 'next/image';
+import React , { Suspense, useEffect, useState } from 'react';
 import bg from '/public/saudi.jpg'
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-export default function Discount() { // Defining the main functional component named 'Footer'.
+import Loading from '@/app/loading';
+
+
+
+export default function DiscountWrapper() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <Discount />
+        </Suspense>
+    );
+}
+
+function Discount() { // Defining the main functional component named 'Footer'.
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID
     useEffect(() => {

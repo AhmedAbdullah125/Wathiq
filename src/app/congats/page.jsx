@@ -1,10 +1,16 @@
 'use client'
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import doneImage from '/public/done.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import Loading from '../loading';
+export default function bookWrapper() {
+    <Suspense fallback={<Loading />}>
+        <Book />
+    </Suspense>
+}
 
-export default function Book() {
+function Book() {
     const searchParams = useSearchParams();  // Fixed variable name
     const name = searchParams.get('name');
     const phone = searchParams.get('phone');
@@ -25,7 +31,7 @@ export default function Book() {
         }
     }, [name, phone, size, emil]); // Added dependency array
 
-    
+
     return (
         <div className="popup" >
             <div className="popup-cont">

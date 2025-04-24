@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import logo from '../../assets/images/home/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +7,21 @@ import { Menu, X } from 'lucide-react';
 import { API_BASE_URL } from "@/lib/apiConfig";
 import axios from "axios";
 import { useSearchParams } from 'next/navigation';
-export default function Header() {
+import Loading from '@/app/loading';
+
+
+
+
+export default function HeaderWrapper() {
+  return (
+      <Suspense fallback={<Loading />}>
+          <Header />
+      </Suspense>
+  );
+}
+
+
+function Header() {
   function handleClose() {
     document.querySelector('html').style.overflowY = 'unset';
     document.querySelector('.side-menu').classList.toggle('side-menu-active')

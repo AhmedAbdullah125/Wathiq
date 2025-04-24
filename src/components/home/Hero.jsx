@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import bg from '/public/HeroBg.jpg'
 import tab from '/public/tab.png'
@@ -7,8 +7,20 @@ import mobile from '/public/mobile.svg'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
+import Loading from '@/app/loading';
+
+
+
 
 export default function Hero() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <HeroWrapper />
+        </Suspense>
+    );
+}
+
+function HeroWrapper() {
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID
     useEffect(() => {

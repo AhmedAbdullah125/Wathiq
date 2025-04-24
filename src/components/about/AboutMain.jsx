@@ -1,7 +1,8 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState , useEffect} from 'react';
+import React, { useState , useEffect, Suspense} from 'react';
+import Loading from '@/app/loading';
 import icon1 from '/public/goals/1.webp'
 import icon2 from '/public/goals/2.webp'
 import icon3 from '/public/goals/3.webp'
@@ -12,7 +13,14 @@ import icon5 from '/public/goals/5.webp'
 import bg from '/public/about-bg.jpg'
 import { useSearchParams } from 'next/navigation';
 
-export default function AboutMain() {
+export default function About() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <AboutMain />
+        </Suspense>
+    );
+}
+function AboutMain() {
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID
     useEffect(() => {

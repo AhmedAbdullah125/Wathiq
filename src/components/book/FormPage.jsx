@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Input } from '../ui/input';
 import ReCAPTCHA from "react-google-recaptcha"
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,7 +14,18 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
 import axios from 'axios';
 import { Textarea } from '../ui/textarea';
-export default function FormPage() {
+import Loading from '@/app/loading';
+
+
+
+export default function FormPageWrapper() {
+    return (
+        <Suspense fallback={<Loading />}>
+            <FormPage />
+        </Suspense>
+    );
+}
+function FormPage() {
     const searchParams = useSearchParams();
     const [gclid, setGclid] = useState(null); // Store GCLID
     useEffect(() => {
